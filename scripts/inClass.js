@@ -92,25 +92,17 @@ const students = [
     }
 ]
 
-const h1 = (text) => {
-    return `<h1>${text}</h1>`
-}
-
-const section = (text) => {
-    return `<section>${text}</section>`
-}
-
-const aside = (text) => {
-    return `<aside>${text}</aside>`
+const element = (tag, className, text) => {
+    return `<${tag} class="${className}">${text}</${tag}>`
 }
 
 const createStudentComponent = (student) => {
     
     return `
     <div id="student">
-        ${h1(student.name)}
-        ${section(student.subject)}
-        ${aside(student.info)}
+        ${element(student.name)}
+        ${element(student.subject)}
+        ${element(student.info)}
     </div>
 `
 }
