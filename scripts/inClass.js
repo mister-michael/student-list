@@ -92,9 +92,9 @@ const students = [
     }
 ]
 
-const createStudentComponent = (name, subject, info) => {
+const createStudentComponent = (name, subject, info, score) => {
     return `
-        <div class="student">
+        <div class="student ${score >= 60 ? `xx-large passing` : ``}">
             <h1>${name}</h1>
             <section>${subject}</section>
             <aside>${info}</aside>
@@ -110,6 +110,7 @@ for (let i = 0; i < students.length; i++) {
     studentContainer.innerHTML += createStudentComponent(
         student.name,
         student.subject,
-        student.info
+        student.info,
+        student.score
     )
 }
