@@ -92,14 +92,27 @@ const students = [
     }
 ]
 
+const h1 = (text) => {
+    return `<h1>${text}</h1>`
+}
+
+const section = (text) => {
+    return `<section>${text}</section>`
+}
+
+const aside = (text) => {
+    return `<aside>${text}</aside>`
+}
+
 const createStudentComponent = (student) => {
+    
     return `
-        <div class="student ${student.score < 60 ? `xx-large passing` : ``}">
-            <h1>${student.name}</h1>
-            <section>${student.subject}</section>
-            <aside>${student.info}</aside>
-        </div>
-    `
+    <div id="student">
+        ${h1(student.name)}
+        ${section(student.subject)}
+        ${aside(student.info)}
+    </div>
+`
 }
 
 const studentContainer = document.querySelector("#container")
